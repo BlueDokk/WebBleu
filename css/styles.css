@@ -19,9 +19,29 @@ body{
     text-align: center;
     text-transform: uppercase;
 }
+.sub-title{
+    padding: 30px 50px;
+    color: #fff;
+    text-transform:capitalize;
+}
+.paragraph{
+    margin: 0;
+    color: #fff;
+    text-align: justify;
+    font-size: 1.3rem;
+    padding: 20px 60px 5px 60px;
+}
 .horizontal-line{
     color: #fff;
 }
+.section-page{
+    padding: 10px;
+}
+#photo-gallery .gallery__group{
+    position:relative;
+    margin:auto;
+}
+
 /*=============================================
                     NAVBAR
 =============================================*/
@@ -48,6 +68,7 @@ body{
     padding: 0 10px;
 }
 .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .nav-link{
+    text-align: center;
     color:#fff;
 }
 .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item:hover{
@@ -56,6 +77,24 @@ body{
 .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item:hover .nav-link{
     color: black;
 }
+
+.navbar .container-fluid .navbar-collapse .navbar-nav .active-box{
+    background: #fff;
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .active{
+    color: #000;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+.navbar-toggler:hover, .navbar-toggler:focus {
+    background-color:#636363;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
 /*=============================================
                    JUMBOTRON
 =============================================*/
@@ -67,7 +106,7 @@ body{
     padding:0;
     margin: 0;
     z-index: 0;
-    height: 380px;
+    height: 450px;
 }
 .jumbotron .jumbotron__box{
     position: relative;
@@ -77,7 +116,7 @@ body{
 }
 .jumbotron .jumbotron__box .img-jumbotron{
     position: absolute;
-    top:0;left:0;right:0;bottom:0;
+    top:50px;left:0;right:0;bottom:0;
     display:flex;
     margin: auto;
     object-fit: content;
@@ -272,23 +311,23 @@ body{
     transform: translate(15px, -15px);
 }
 .social-networks a:nth-child(1) .layer .icon,.social-networks a:nth-child(1) .text {
-    color:#4267ff;
+    color:#fff;
 }
 .social-networks a:nth-child(2) .layer .icon,.social-networks a:nth-child(2) .text {
-    color:#c41e9a;
+    color:#c44eba;
 }
 .social-networks a:nth-child(3) .layer .icon,.social-networks a:nth-child(3) .text {
-    color:#fff;
+    color: #11BA17;
 }
 
 .social-networks a:nth-child(1) .layer span{
-    box-shadow: -1px 1px 3px #4267ff;
+    box-shadow: -1px 1px 3px #fff;
 }
 .social-networks a:nth-child(2) .layer span{
     box-shadow: -1px 1px 3px #c41e9a;
 }
 .social-networks a:nth-child(3) .layer span{
-    box-shadow: -1px 1px 3px #888;
+    box-shadow: -1px 1px 3px #11BA17;
 }
 
 .social-networks a .text{
@@ -304,20 +343,270 @@ body{
     opacity: 1;
 }
 /*=============================================
+                    CATEGORIES
+=============================================*/
+.categories{
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    position: relative;
+    width:250px;
+    height:250px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    margin: 40px;
+    background: #111;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.box:hover{
+    height: 310px;
+}
+
+.box .imgBx{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #000;
+    text-align: center;
+    overflow: hidden;
+    margin: auto;
+}
+
+.box .imgBx img{
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.05;
+    transition: 0.5s;
+}
+
+.box:hover .imgBx img{
+    opacity: 1;
+}
+
+.box:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -1;
+}
+
+.box:after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -2;
+    filter: blur(20px);
+}
+
+.box:before,
+.box:after{
+    background: linear-gradient(235deg,#aaa,#010615,#fff);
+}
+
+.box:nth-child(2):before,
+.box:nth-child(2):after{
+    background: linear-gradient(235deg,#aaa,#010615,#fff);
+}
+
+.box:nth-child(3):before,
+.box:nth-child(3):after{
+    background: linear-gradient(235deg,#aaa,#010615,#fff);
+}
+
+.box .content
+{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.box:hover .content{
+    opacity: 1;
+}
+
+.box .content h2{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.box .content h2 span{
+    font-size: 14px;
+    color: #fff;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+/*=============================================
+PHOTO GALLERY
+=============================================*/
+.gallery{
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+.gallery__group{
+    padding: 20px;
+    list-style: none;
+}
+.gallery__group li{
+    margin: auto;
+    padding:10px;
+    cursor: pointer;
+    transition: .6s;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+.gallery__group li:hover{
+    transition: .6s;
+    opacity: .6;
+}
+.gallery__group li img{
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover){
+    .gallery__group li img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
+/*=============================================
+                    ABOUT-ARTIST
+=============================================*/
+section .about{
+    position: relative;
+    margin: 50px auto;
+    width: 800px;
+    background-color: rgba(255,255,255,.1);
+    border-radius: 10px;
+}
+section .about .paragraph{
+    font-size: 1.4rem;
+    padding: 20px 0 0 50px;
+}
+/*=============================================
+                    FOOTER
+=============================================*/
+.footer{
+    background-color: #1A1A1A;
+}
+.contact-list li a{
+    text-decoration: none;
+}
+
+/*=============================================
                 MEDIA QUERIES
 =============================================*/
 @media(min-width:992px) and (max-width:1199px){
-
+    section .about{
+        width: 100%;
+    }
+    section .about .paragraph{
+        padding: 40px 0 0 40px;
+    }
 }
 @media(min-width:768px) and (max-width:991px){
-    
+    section .about{
+        width: 80%;
+    }
+    section .about .paragraph{
+        font-size: 1rem;
+        padding: 10px 0 0 40px;
+    }
 }
 @media(min-width:576px) and (max-width:767px){
-    
+    section .about{
+        width: 80%;
+    }
+    section .about .paragraph{
+        font-size: 1rem;
+        padding: 10px 0 10px 0;
+        text-align: center;
+    }
 }
 @media(min-width:375px) and (max-width:575px){
-    
+    section .about{
+        width: 80%;
+    }
+    section .about .paragraph{
+        font-size: 1rem;
+        padding: 10px 0 10px 0;
+        text-align: center;
+    }
+    .paragraph{
+        font-size: 1.1rem;
+        padding: 20px 40px 5px 40px;
+    }
+    .jumbotron .jumbotron__box .img-jumbotron{
+        height: 360px;
+    }
+    .jumbotron{
+        height: 380px;
+    }
 }
 @media(max-width:374px){
-    
+    section .about{
+        width: 80%;
+    }
+    section .about .paragraph{
+        font-size: 1rem;
+        padding: 10px 0 10px 0;
+        text-align: center;
+    }
+    .paragraph{
+        font-size: .9rem;
+        padding: 20px 40px 5px 40px;
+    }
+    .jumbotron .jumbotron__box .img-jumbotron{
+        height: auto;
+    }
+    .social-networks{
+        top: 350px;
+        right:15px;
+    }
+    .social-networks a .layer{
+        width: 45px;
+        height: 45px;
+        transition: transform .3s;
+    }
+    .social-networks a .text{
+        font-size: .7rem;
+    }
+    .jumbotron{
+        height: 380px;
+    }
 }

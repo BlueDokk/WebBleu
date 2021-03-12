@@ -8,14 +8,13 @@
 
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/styles.min.css">
     <link rel="icon" href="images/icon.png">
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar fixed-top navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Bleu-Art</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,16 +23,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Gallery</a>
+            <a class="nav-link" href="#art-categories">Art Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About artist</a>
+            <a class="nav-link" href="#photo-gallery">Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#about-artist">About artist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -42,11 +44,9 @@
     
   <!-- JUMBOTRON -->
   <div class="jumbotron">
-        
     <div class="jumbotron__box">
       <img class="img-jumbotron img-fluid" src="images/jumbotron.png" alt="Bleu">
     </div>
-
     <div class="jumbotron__area" >
       <ul class="jumbotron__area-circles">
         <li></li>
@@ -61,23 +61,22 @@
         <li></li>
       </ul>    
     </div >
-
   </div>
 
   <!-- SOCIAL NETWORKS -->
   <div class="social-networks">
-    <a href="#">
+    <a href="https://www.deviantart.com/bluedokk" target="blank">
       <div class="layer">
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-          <span class="icon fab fa-linkedin"></span>
+          <span class="icon fab fa-deviantart"></span>
       </div>
-      <div class="text">Linkedin</div>
+      <div class="text">DeviantArt</div>
      </a>
 
-    <a href="#">
+    <a href="https://www.instagram.com/bluedokk/?hl=es-la" target="blank">
         <div class="layer">
             <span></span>
             <span></span>
@@ -88,68 +87,128 @@
         <div class="text">Instagram</div>
     </a>
 
-    <a href="#">
+    <a href="https://api.whatsapp.com/send?phone=573217555792" target="blank">
         <div class="layer">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            <span class="icon fab fa-github"></span>
+            <span class="icon fab fa-whatsapp"></span>
         </div>
-        <div class="text">Github</div>
+        <div class="text">WhatsApp</div>
     </a>
     
   </div>
 
-  <section class="container">
+  <section id="home" class="container section-page">
     <h2 class="titles">Welcome</h2>
     <hr class="horizontal-line">
-
-
-
+    <p class="paragraph">Welcome to the world of Bleu. Immerse yourself in the lines made by the artist Bleu (Javier Velasquez) and get to know his experience in this field. His illustrations are based on the people in his environment and his perception of them. This is just a sample, a brushstroke of his art. To see more of his illustrations follow him on his social networks.</p>
   </section>
 
 
   <!-- CATEGORIES -->
-  <section class="container">
+  <section id="art-categories" class="container section-page">
     <h2 class="titles">Art Categories</h2>
     <hr class="horizontal-line">
     <div class="categories row">
-      <div class="box">
-        <div class="imgBx">
-            <img src="images/cards/1.jpg" >
+      <div category="digital" class="box">
+        <div class="imgBx" category="digital">
+            <img src="images/cards/1.jpg" alt="Image - Digital" category="digital">
         </div>
-        <div class="content">
-            <h2>DIGITAL<br> <span>Magician</span></h2>
-        </div>
-      </div>
-      <div class="box">
-        <div class="imgBx">
-            <img src="images/cards/2.jpg" >
-        </div>
-        <div class="content">
-            <h2>CARICATURES<br> <span>FUN</span></h2>
+        <div class="content" category="digital">
+            <h2 category="digital">DIGITAL<br> <span category="digital">Magic pixels</span></h2>
         </div>
       </div>
-      <div class="box">
-        <div class="imgBx">
-            <img src="images/cards/3.jpg" alt="">
+      <div category="caricatures" class="box">
+        <div  class="imgBx" category="caricatures">
+            <img src="images/cards/2.jpg" alt="Image - Caricatures" category="caricatures">
         </div>
-        <div class="content">
-            <h2>TRADITIONAL<br> <span>animation</span></h2>
+        <div class="content" category="caricatures">
+            <h2 category="caricatures">CARICATURES<br> <span category="caricatures">Fun pixels</span></h2>
+        </div>
+      </div>
+      <div category="traditional" class="box">
+        <div  class="imgBx" category="traditional">
+            <img src="images/cards/3.jpg" alt="Image - Traditional" category="traditional">
+        </div>
+        <div class="content" category="traditional">
+            <h2 category="traditional">TRADITIONAL<br> <span category="traditional">Classic</span></h2>
         </div>
       </div>
     </div>
+
+    <div class="category-description row">
+      <h2 id="category-title">Select a category</h2>
+      <p id="category-description" class="paragraph"></p>
+    </div>
   </section>
 
+  <section id="photo-gallery" class="container section-page">
+    <h2 class="titles">PHOTO GALLERY</h2>
+    <hr class="horizontal-line">
+    <div class="row gallery">
+      <ul class="gallery__group row">
+      </ul>
+    </div>
+  </section>
 
+  <section id="about-artist" class="container section-page">
+    <h2 class="titles">ABOUT ARTIST </h2>
+    <hr class="horizontal-line">
+    <div class="about row">
+      <img src="images/artist.png" alt="artist.png" class="col-xl-4 col-lg-4 col-md-4 offset-lg-1 offset-xl-0 col-sm-12 offset-md-0 offset-sm-0">
+      <P class="paragraph col-xl-8 col-lg-7 col-md-8 col-sm-12">
+        Name: Javier Velasquez<br>
+        Age: 27<br>
+        Profession: Electronic Engineer<br>
+        University: Surcolombiana University<br>
+        Country: Colombia <br>
+        Hometown: Neiva (Huila)<br>
+      </P>
+    </div>
+  </section>
 
-
+  <footer id="contact" class="footer text-white text-center text-lg-start">
+    <hr class="horizontal-line">
+    <div class="container p-4">
+          <div class="row">
+            <div class="col-lg-8 col-md-12 mb-3 mb-md-0 order-1 order-sm-1">
+              <h5 class="text-uppercase">Website - BLEU ART</h5>
+              <p>
+                <i>Website with samples of the artist Bleu. Digital art, caricatures and traditional art.</i>
+              </p>
+              <p>
+                Content made by engineer Javier Velasquez.<br>
+                Design and implementation of the site by engineer Javier Velasquez.
+              </p>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-center order-3 order-sm-2">
+              <h5 class="text-uppercase mb-0">Contact</h5>
+      
+              <ul class="contact-list list-unstyled">
+                <li>
+                  <br>
+                  <a href="mailto:katzschwarz@gmail.com?subject=BLEU%20WEBSITE" class="text-white">Email: katzschwarz@gmail.com</a>
+                </li>
+                <li>
+                  <p>Celular: +57 321 755 5792<br>Neiva-Huila (Colombia)</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </div><!-- Container footer -->
+        <!-- Copyright -->
+    <div class="box-over text-center p-3">
+      <p>© 2021 Copyright: Javier Velasquez</p>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
   <script src="js/all.min.js"></script>
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.min.js"></script>
 </body>
 </html>
