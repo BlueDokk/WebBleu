@@ -115,8 +115,8 @@ var mg = {
 
     getSrc: (image)=>{
         pg.srcImage = image.getAttribute('src');
-        pg.srcImage = pg.srcImage.replace('min/','full/');
-        pg.srcImage = pg.srcImage.replace('-min','');
+        // pg.srcImage = pg.srcImage.replace('min/','full/');
+        // pg.srcImage = pg.srcImage.replace('-min','');
     },
 
     ligthBox: (path)=> {
