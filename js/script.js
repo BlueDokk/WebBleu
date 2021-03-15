@@ -17,6 +17,7 @@ var mm = {
                 item.target.parentNode.classList.add('active-box');
             })
         } )
+        mm.clearMenu();
     },
     clearActive: ()=>{
         mp.menu.forEach((item)=>{
@@ -24,6 +25,17 @@ var mm = {
             item.parentNode.classList.remove('active-box');
         });
     },
+    clearMenu: ()=>{
+
+        // HIDE MENU
+        $("html").click(function(event){
+            let screenWidth = window.innerWidth;
+            if (screenWidth < 992) {
+            $("#navbarSupportedContent").collapse('hide');
+            }
+        });
+
+    }
 }
 /*=============================================
  ART-CATEGORIES PROPERTIES OBJECT
